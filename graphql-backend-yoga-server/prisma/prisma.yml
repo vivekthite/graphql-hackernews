@@ -1,0 +1,14 @@
+#The HTTP endpoint for prisma API
+endpoint: https://eu1.prisma.sh/vivek-7a86d1/tvs-project/dev
+
+#datamodel file
+datamodel: datamodel.prisma
+
+#language and location for generated prisma client
+generate:
+  - generator: javascript-client
+    output: ../src/generated/prisma-client
+
+hooks:
+  post-deploy:
+    - prisma generate    
